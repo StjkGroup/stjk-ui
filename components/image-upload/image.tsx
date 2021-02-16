@@ -65,7 +65,7 @@ export default ({onChange}: any) => {
       <input ref={inputRef} accept="image/*" className={classes.input} type="file" onChange={handleChange}/>
       <Button
         variant="contained"
-        color="default"
+        color="inherit"
         startIcon={<CloudUploadIcon />}
         onMouseDown={handleMouseDown}
       >

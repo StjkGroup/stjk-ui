@@ -1,14 +1,16 @@
 import {Theme} from '../theme';
 
-const inputAdornment: Theme['overrides'] = {
+const inputAdornment: Theme['components'] = {
   MuiInputAdornment: {
-    filled: {
-      '&.MuiInputAdornment-positionStart:not(.MuiInputAdornment-hiddenLabel)':{
-        marginTop: 0
+    styleOverrides: {
+      filled: {
+        '&.MuiInputAdornment-positionStart:not(.MuiInputAdornment-hiddenLabel)':{
+          marginTop: 0
+        }
+      },
+      positionStart: {
+        marginRight: 0
       }
-    },
-    positionStart: {
-      marginRight: 0
     }
   }
 }

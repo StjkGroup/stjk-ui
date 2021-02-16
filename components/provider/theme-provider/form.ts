@@ -1,17 +1,19 @@
 import {Theme} from './theme';
 import {blue, red} from '../../colors';
 
-const form: Theme['overrides'] = {
+const form: Theme['components'] = {
   MuiFormLabel: {
-    root: {
-      fontSize: '0.875rem',
-      '&.Mui-focused': {
-        color: blue[800],
-        fontWeight: 500
-      },
-      '&.Mui-error': {
-        color: red[700],
-      },
+    styleOverrides: {
+      root: {
+        fontSize: '0.875rem',
+        '&.Mui-focused': {
+          color: blue[800],
+          fontWeight: 500
+        },
+        '&.Mui-error': {
+          color: red[700],
+        },
+      }
     }
   },
 }

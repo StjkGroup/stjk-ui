@@ -1,10 +1,12 @@
 import {Theme} from './theme';
 
-const autocomplete: Theme['overrides'] = {
+const autocomplete: Theme['components'] = {
   MuiAutocomplete: {
-    inputRoot: {
-      '&[class*="MuiOutlinedInput-root"]': {
-        padding: '2.5px 16px'
+    styleOverrides: {
+      inputRoot: {
+        '&[class*="MuiOutlinedInput-root"]': {
+          padding: '2.5px 16px'
+        }
       }
     }
   }

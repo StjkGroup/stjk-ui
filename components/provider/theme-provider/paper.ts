@@ -1,10 +1,12 @@
 import {Theme} from './theme';
 
-const paper: Theme['overrides'] = {
+const paper: Theme['components'] = {
   MuiPaper: {
-    rounded: {
-      borderRadius: '6px'
-    },
+    styleOverrides: {
+      rounded: {
+        borderRadius: '6px'
+      },
+    }
   }
 }
 

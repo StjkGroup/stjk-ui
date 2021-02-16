@@ -31,7 +31,7 @@ const ButtonApp = () => {
           <Button color={'secondary'}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button color={'default'}>Default</Button>
+          <Button color={'inherit'}>Default</Button>
         </Box>
         <Box ml={2}>
           <Button disabled color={'primary'}>Primary</Button>
@@ -40,7 +40,7 @@ const ButtonApp = () => {
           <Button disabled color={'secondary'}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button disabled color={'default'}>Default</Button>
+          <Button disabled color={'inherit'}>Default</Button>
         </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
@@ -51,7 +51,7 @@ const ButtonApp = () => {
           <Button variant={'text'} color={'secondary'}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button variant={'text'} color={'default'}>Default</Button>
+          <Button variant={'text'} color={'inherit'}>Default</Button>
         </Box>
         <Box ml={2}>
           <Button disabled variant={'text'} color={'primary'}>Primary</Button>
@@ -60,7 +60,7 @@ const ButtonApp = () => {
           <Button disabled variant={'text'} color={'secondary'}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button disabled variant={'text'} color={'default'}>Default</Button>
+          <Button disabled variant={'text'} color={'inherit'}>Default</Button>
         </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
@@ -71,7 +71,7 @@ const ButtonApp = () => {
           <Button variant={'outlined'} color={'secondary'}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button variant={'outlined'} color={'default'}>Default</Button>
+          <Button variant={'outlined'} color={'inherit'}>Default</Button>
         </Box>
         <Box ml={2}>
           <Button disabled variant={'outlined'} color={'primary'}>Primary</Button>
@@ -80,7 +80,7 @@ const ButtonApp = () => {
           <Button disabled variant={'outlined'} color={'secondary'}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button disabled variant={'outlined'} color={'default'}>Default</Button>
+          <Button disabled variant={'outlined'} color={'inherit'}>Default</Button>
         </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
@@ -91,7 +91,7 @@ const ButtonApp = () => {
           <Button color={'secondary'} startIcon={<FavoriteIcon/>}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button color={'default'} startIcon={<FavoriteIcon/>}>Default</Button>
+          <Button color={'inherit'} startIcon={<FavoriteIcon/>}>Default</Button>
         </Box>
         <Box ml={2}>
           <Button disabled color={'primary'} startIcon={<FavoriteIcon/>}>Primary</Button>
@@ -100,7 +100,7 @@ const ButtonApp = () => {
           <Button disabled color={'secondary'} startIcon={<FavoriteIcon/>}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button disabled color={'default'} startIcon={<FavoriteIcon/>}>Default</Button>
+          <Button disabled color={'inherit'} startIcon={<FavoriteIcon/>}>Default</Button>
         </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
@@ -111,7 +111,7 @@ const ButtonApp = () => {
           <Button color={'secondary'} endIcon={<FavoriteIcon/>}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button color={'default'} endIcon={<FavoriteIcon/>}>Default</Button>
+          <Button color={'inherit'} endIcon={<FavoriteIcon/>}>Default</Button>
         </Box>
         <Box ml={2}>
           <Button disabled color={'primary'} endIcon={<FavoriteIcon/>}>Primary</Button>
@@ -120,7 +120,7 @@ const ButtonApp = () => {
           <Button disabled color={'secondary'} endIcon={<FavoriteIcon/>}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button disabled color={'default'} endIcon={<FavoriteIcon/>}>Default</Button>
+          <Button disabled color={'inherit'} endIcon={<FavoriteIcon/>}>Default</Button>
         </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
@@ -131,7 +131,7 @@ const ButtonApp = () => {
           <Button variant={'outlined'} color={'secondary'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button variant={'outlined'} color={'default'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Default</Button>
+          <Button variant={'outlined'} color={'inherit'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Default</Button>
         </Box>
         <Box ml={2}>
           <Button variant={'outlined'} disabled color={'primary'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Primary</Button>
@@ -140,7 +140,7 @@ const ButtonApp = () => {
           <Button variant={'outlined'} disabled color={'secondary'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button variant={'outlined'} disabled color={'default'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Default</Button>
+          <Button variant={'outlined'} disabled color={'inherit'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Default</Button>
         </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
@@ -151,7 +151,7 @@ const ButtonApp = () => {
           <Button variant={'text'} color={'secondary'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button variant={'text'} color={'default'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Default</Button>
+          <Button variant={'text'} color={'inherit'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Default</Button>
         </Box>
         <Box ml={2}>
           <Button variant={'text'} disabled color={'primary'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Primary</Button>
@@ -160,7 +160,7 @@ const ButtonApp = () => {
           <Button variant={'text'} disabled color={'secondary'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button variant={'text'} disabled color={'default'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Default</Button>
+          <Button variant={'text'} disabled color={'inherit'} startIcon={<FavoriteIcon/>} endIcon={<FavoriteIcon/>}>Default</Button>
         </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>

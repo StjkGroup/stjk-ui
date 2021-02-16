@@ -1,11 +1,13 @@
 import {Theme} from './theme';
 
-const snackbar: Theme['overrides'] = {
+const snackbar: Theme['components'] = {
   MuiSnackbar: {
-    anchorOriginTopRight: {
-      '@media (min-width: 600px)': {
-        top: '60px',
-        left: '200px',
+    styleOverrides: {
+      anchorOriginTopRight: {
+        '@media (min-width: 600px)': {
+          top: '60px',
+          left: '200px',
+        }
       }
     }
   },

@@ -33,7 +33,7 @@ const muiTheme = createMuiTheme({
     }
   },
   spacing: 8,
-  overrides: {
+  components: {
     ...paper,
     ...snackbar,
     ...button,

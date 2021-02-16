@@ -1,11 +1,13 @@
 import {Theme} from './theme';
 
-const select: Theme['overrides'] = {
+const select: Theme['components'] = {
   MuiSelect: {
-    selectMenu: {
-      display: 'flex',
-      minHeight: '24px'
-    },
+    styleOverrides: {
+      selectMenu: {
+        display: 'flex',
+        minHeight: '24px'
+      },
+    }
   }
 }
 

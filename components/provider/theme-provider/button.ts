@@ -1,22 +1,26 @@
 import {Theme} from './theme';
 
-const button: Theme['overrides'] = {
+const button: Theme['components'] = {
   MuiButton: {
-    root: {
-      textTransform: "inherit",
-      padding: '8px 24px'
-    },
-    outlined: {
-      padding: '8px 24px',
-    },
-    text: {
-      padding: '8px 24px'
-    },
+    styleOverrides: {
+      root: {
+        textTransform: "inherit",
+        padding: '8px 24px'
+      },
+      outlined: {
+        padding: '8px 24px',
+      },
+      text: {
+        padding: '8px 24px'
+      },
+    }
   },
   MuiIconButton: {
-    root: {
-      borderRadius: '4px',
-      padding: '4px'
+    styleOverrides: {
+      root: {
+        borderRadius: '4px',
+        padding: '4px'
+      }
     }
   },
 }

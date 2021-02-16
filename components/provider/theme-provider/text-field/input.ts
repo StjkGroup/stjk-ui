@@ -1,13 +1,15 @@
 import {Theme} from '../theme';
 
-const outlinedInput: Theme['overrides'] = {
+const outlinedInput: Theme['components'] = {
   MuiInputBase: {
-    root: {
+    styleOverrides: {
+      root: {
       
-    },
-    input: {
-      fontSize: '0.875rem',
-      height: '1.7143em',
+      },
+      input: {
+        fontSize: '0.875rem',
+        height: '1.7143em',
+      }
     }
   },
 }
