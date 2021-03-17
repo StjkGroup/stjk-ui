@@ -1,6 +1,6 @@
-import {Theme} from '../theme';
+import {ThemeFunction} from '../theme';
 
-const inputAdornment: Theme['components'] = {
+export const getInputAdornmentTheme: ThemeFunction = () => ({
   MuiInputAdornment: {
     styleOverrides: {
       filled: {
@@ -13,6 +13,4 @@ const inputAdornment: Theme['components'] = {
       }
     }
   }
-}
-
-export default inputAdornment;
+})

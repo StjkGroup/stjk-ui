@@ -14,26 +14,26 @@ const TextField1 = () => {
     <Box>
       <Box mt={2} display={'flex'} justifyContent={'center'}>
         <Box>
-          <TextField label="Default"
-            value={value} onChange={e => {setValue(e.target.value)}}
+          <TextField label="Outlined"
+            value={value} onChange={(e: any) => {setValue(e.target.value)}}
           />
         </Box>
         <Box ml={2}>
           <TextField label="Filled" variant="filled" />
         </Box>
         <Box ml={2}>
-          <TextField label="Outlined" variant="outlined" />
+          <TextField label="Standard" variant="standard" />
         </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'}>
         <Box>
-          <TextField label="Outlined" error />
+          <TextField error />
         </Box>
         <Box ml={2}>
           <TextField label="Filled" variant="filled" error helperText={'error'}/>
         </Box>
         <Box ml={2}>
-          <TextField label="outlined" disabled value={value} onChange={handleChange}/>
+          <TextField label="standard" variant="standard" disabled value={value} onChange={handleChange}/>
         </Box>
       </Box>
     </Box>

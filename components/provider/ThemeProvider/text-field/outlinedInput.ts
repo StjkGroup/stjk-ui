@@ -1,15 +1,15 @@
-import {Theme} from '../theme';
-import {blue, grey, red} from '../../../colors';
+import {ThemeFunction} from '../theme';
+import {grey} from '../../../colors';
 
-const outlinedInput: Theme['components'] = {
+export const getOutlinedInputTheme: ThemeFunction = (baseTheme) => ({
   MuiOutlinedInput: {
     styleOverrides: {
       root: {
         '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-          borderColor: blue[800],
+          borderColor: baseTheme.palette.primary.main,
         },
         '&.Mui-error .MuiOutlinedInput-notchedOutline': {
-          borderColor: red[700],
+          borderColor: baseTheme.palette.secondary.main,
         }
       },
       input: {
@@ -25,6 +25,4 @@ const outlinedInput: Theme['components'] = {
       }
     }
   },
-}
-
-export default outlinedInput;
+})

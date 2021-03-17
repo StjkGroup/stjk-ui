@@ -1,6 +1,6 @@
-import {Theme} from '../theme';
+import {ThemeFunction} from '../theme';
 
-const inputLabel: Theme['components'] = {
+export const getInputLabelTheme: ThemeFunction = () => ({
   MuiInputLabel: {
     styleOverrides: {
       outlined: {
@@ -14,6 +14,4 @@ const inputLabel: Theme['components'] = {
       },
     }
   },
-}
-
-export default inputLabel;
+})

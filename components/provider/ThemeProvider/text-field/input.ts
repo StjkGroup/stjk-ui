@@ -1,6 +1,6 @@
-import {Theme} from '../theme';
+import {ThemeFunction} from '../theme';
 
-const outlinedInput: Theme['components'] = {
+export const getInputTheme: ThemeFunction = () => ({
   MuiInputBase: {
     styleOverrides: {
       root: {
@@ -12,6 +12,4 @@ const outlinedInput: Theme['components'] = {
       }
     }
   },
-}
-
-export default outlinedInput;
+})

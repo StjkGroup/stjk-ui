@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Provider from '@/app/provider';
 import {PATH_PREFIX} from "@/env";
 
@@ -36,7 +35,6 @@ export default function MyApp(props: Props) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
       </Head>
       <Provider>
-        <CssBaseline />
         <Component {...pageProps} />
       </Provider>
     </React.Fragment>

@@ -1,21 +1,18 @@
-import {Theme} from './theme';
-import {blue, red} from '../../colors';
+import {ThemeFunction} from './theme';
 
-const form: Theme['components'] = {
+export const getFormTheme: ThemeFunction = (baseTheme) => ({
   MuiFormLabel: {
     styleOverrides: {
       root: {
         fontSize: '0.875rem',
         '&.Mui-focused': {
-          color: blue[800],
+          color: baseTheme.palette.primary.main,
           fontWeight: 500
         },
         '&.Mui-error': {
-          color: red[700],
+          color: baseTheme.palette.secondary.main,
         },
       }
     }
   },
-}
-
-export default form;
+})

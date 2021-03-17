@@ -2,6 +2,7 @@ import React from 'react';
 import TextField, {BaseTextFieldProps as MuiBaseTextFieldProps} from '@material-ui/core/TextField';
 import { FilledInputProps } from '@material-ui/core/FilledInput';
 import { OutlinedInputProps } from '@material-ui/core/OutlinedInput';
+import { InputProps as StandardInputProps } from '../Input';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import CancelIcon from '@material-ui/icons/Cancel';
 import IconButton from '../IconButton';
@@ -53,12 +54,22 @@ export interface OutlinedTextFieldProps extends MuiBaseTextFieldProps {
   onSearch?: (value: unknown) => void
 }
 
-export type KuiTextFieldProps = OutlinedTextFieldProps | FilledTextFieldProps;
+export interface StandardTextFieldProps extends MuiBaseTextFieldProps {
+  onBlur?: StandardInputProps['onBlur'];
+  onChange?: StandardInputProps['onChange'];
+  onFocus?: StandardInputProps['onFocus'];
+  variant?: 'standard';
+  InputProps?: Partial<StandardInputProps>;
+  inputProps?: StandardInputProps['inputProps'];
+  onSearch?: (value: unknown) => void
+}
 
-const KuiTextField = ({
-  variant='outlined',
+export type KuiTextFieldProps = OutlinedTextFieldProps | FilledTextFieldProps | StandardTextFieldProps;
+
+const KuiTextField = React.forwardRef(({
+  variant,
   color='primary',
-  InputProps,
+  InputProps={},
   defaultValue,
   value,
   onChange,
@@ -66,13 +77,12 @@ const KuiTextField = ({
   InputLabelProps,
   onSearch,
   ...props
-}: KuiTextFieldProps) => {
+}: KuiTextFieldProps, ref: any) => {
   const classes = useStyles();
 
   const [state, setState] = React.useState<any>({value: value || defaultValue});
   const [focus, setFocus] = React.useState(false);
   const [hover, setHover] = React.useState(false);
-  const inputRef = React.useRef<any>();
 
   React.useEffect(() => {
     setState({value});
@@ -83,11 +93,6 @@ const KuiTextField = ({
     if(onChange){
       const event: any = {target: {value: ''}};
       onChange(event);
-    }else{
-      // console.log(inputRef.current);
-      // console.log(inputRef.current.value);
-      // inputRef.current.value='';
-      // console.log(inputRef.current.value);
     }
   }
 
@@ -138,7 +143,7 @@ const KuiTextField = ({
   const textFieldProps = {
     variant, color,
     defaultValue,
-    value,
+    value: state.value,
     onChange: handleChange,
     disabled,
     InputLabelProps: {shrink, className: clsx({[classes.startAdornmentLabel]: Boolean(InputProps && InputProps.startAdornment)}), ...InputLabelProps},
@@ -146,10 +151,10 @@ const KuiTextField = ({
     onFocus: handleFocus,
     onMouseEnter: handleMouseEnter,
     onMouseLeave: handleMouseLeave,
-    inputRef,
     onKeyUp: handleKeypress,
     ...props
   };
+
 
   if(variant === 'filled'){
     return (
@@ -157,9 +162,10 @@ const KuiTextField = ({
         InputProps={{
           disableUnderline: true,
           endAdornment,
-          ...InputProps
+          ...InputProps,
         } as Partial<OutlinedInputProps>}
         {...textFieldProps}
+        ref={ref}
       />
     );
   }
@@ -170,9 +176,10 @@ const KuiTextField = ({
         ...InputProps
       }}
       {...textFieldProps}
+      ref={ref}
     />
   );
-}
+})
 
 export default KuiTextField;
 

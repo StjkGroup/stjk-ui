@@ -69,13 +69,13 @@ interface NumberFormatCustomProps {
   thousandSeparator?: boolean
 }
 
-const NumberFormatCustom: any = (props: NumberFormatCustomProps) => {
+const NumberFormatCustom: any = React.forwardRef((props: NumberFormatCustomProps, ref: any) => {
   const { inputRef, onChange, thousandSeparator=true, ...other } = props;
 
   return (
     <NumberFormat
       {...other}
-      getInputRef={inputRef}
+      getInputRef={ref}
       onValueChange={values => {
         onChange({
           target: {
@@ -87,10 +87,10 @@ const NumberFormatCustom: any = (props: NumberFormatCustomProps) => {
       isNumericString
     />
   );
-};
+});
 
 const KuiNumberField = ({
-  variant='outlined',
+  variant,
   InputProps={},
   thousandSeparator,
   disabled,
@@ -106,7 +106,6 @@ const KuiNumberField = ({
   const [state, setState] = React.useState({value: value || '0'});
 
   React.useEffect(() => {
-    console.log(value);
     if(value){
       setState({value});
     }
