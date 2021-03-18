@@ -89,10 +89,11 @@ const KuiTextField = React.forwardRef(({
   }, [value]);
 
   const handleClickClear = () => {
-    setState({value: ''});
-    if(onChange){
+    if(value || onChange){
       const event: any = {target: {value: ''}};
-      onChange(event);
+      onChange && onChange(event);
+    }else{
+      setState({value: ''});
     }
   }
 
@@ -111,8 +112,8 @@ const KuiTextField = React.forwardRef(({
   }
 
   const handleChange = (event: any) => {
-    if(onChange){
-      onChange(event);
+    if(value || onChange){
+      onChange && onChange(event);
     }else{
       setState({value: event.target.value});
     }
@@ -142,7 +143,7 @@ const KuiTextField = React.forwardRef(({
   
   const textFieldProps = {
     variant, color,
-    defaultValue,
+    defaultValue: state.value,
     value: state.value,
     onChange: handleChange,
     disabled,
