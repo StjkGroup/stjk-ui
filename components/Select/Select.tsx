@@ -35,7 +35,7 @@ export interface OptionType {
   endIcon?: React.ReactNode,
 }
 
-interface KuiSelectProps{
+interface KuiSelectProps<T = unknown>{
   options: OptionType[],
   label?: React.ReactNode;
   defaultValue?: any;
@@ -56,6 +56,7 @@ interface KuiSelectProps{
   helperText?: React.ReactNode;
   labelId?: string;
   autoWidth?: boolean;
+  renderValue?: (value: T) => React.ReactNode;
 }
 
 const LabelComponent = ({children, startIcon, endIcon}: any) => {
@@ -79,7 +80,7 @@ const LabelComponent = ({children, startIcon, endIcon}: any) => {
 
 const KuiSelect = ({
   children, className, variant="outlined", options, label, labelId, defaultValue='',
-  value=defaultValue, onChange, helperText,
+  value=defaultValue, onChange, helperText, multiple, renderValue,
   ...props
 }: KuiSelectProps) => {
   const classes = useStyles();
@@ -104,8 +105,10 @@ const KuiSelect = ({
         labelId={labelId}
         label={label}
         value={state.value}
+        multiple={multiple}
         onChange={handleChange}
         IconComponent={KeyboardArrowDownIcon}
+        renderValue={renderValue}
       >
         {
           options.map((option: OptionType, index: number) => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import MenuItem, {MenuItemProps as MuiMenuItemProps} from '@material-ui/core/MenuItem';
+import MenuItem from '@material-ui/core/MenuItem';
 
-const KuiMenuItem = React.forwardRef(({children, ...props}: MuiMenuItemProps, ref: any) => {
+const KuiMenuItem = React.forwardRef(({children, ...props}: any, ref: any) => {
   return (
     <MenuItem
       ref={ref}
@@ -14,4 +14,4 @@ const KuiMenuItem = React.forwardRef(({children, ...props}: MuiMenuItemProps, re
 
 export default KuiMenuItem;
 
-export type MenuItemProps=MuiMenuItemProps;
+export * from '@material-ui/core/MenuItem';

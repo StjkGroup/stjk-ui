@@ -5,13 +5,14 @@ import {green, red} from '../../colors';
 import shadows from './shadow';
 import paper from './paper';
 import snackbar from './snackbar';
-import button from './button';
+// import button from './button';
 import typography from './typography';
 import {getFormTheme} from './form';
-import {getTextFieldTheme} from './text-field';
+// import {getTextFieldTheme} from './text-field';
 import menu from './menu';
 import select from './select';
 import autocomplete from './autocomplete';
+import {getTableTheme} from './table';
 
 interface MyTheme extends MuiTheme{
   
@@ -56,12 +57,13 @@ export const muiTheme = createMuiTheme({
   components: {
     ...paper,
     ...snackbar,
-    ...button,
+    // ...button,
     ...typography,
     ...getFormTheme(baseTheme),
-    ...getTextFieldTheme(baseTheme),
+    // ...getTextFieldTheme(baseTheme),
     ...menu,
     ...select,
     ...autocomplete,
+    ...getTableTheme(baseTheme),
   },
 });

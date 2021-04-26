@@ -8,6 +8,7 @@ import Audit from './Audit';
 import DoubleColor from './DoubleColor';
 import Color from './Color';
 import Logo from './Logo';
+import {NAME} from '@/env';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -24,7 +25,7 @@ const IconsApp = () => {
   return (
     <div className={classes.root}>
       <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-        <h1>Welcome to use keystore ui icons.</h1>
+        <h1>Welcome to use {NAME} icons.</h1>
       </Box>
       <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
         <code>import XXX from '@keystore/ui/XXX'</code>

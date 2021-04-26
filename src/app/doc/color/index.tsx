@@ -4,6 +4,7 @@ import * as colors from '@/../components/colors';
 import Box from '@/../components/Box';
 import Typography from '@/../components/Typography';
 import clsx from 'clsx';
+import {NAME} from '@/env';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -36,7 +37,7 @@ const Color = () => {
   return (
     <div className={classes.root}>
       <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-        <h1>Welcome to use keystore ui color.</h1>
+        <h1>Welcome to use {NAME} color.</h1>
       </Box>
       {
         colorTypes.map((type) => {
