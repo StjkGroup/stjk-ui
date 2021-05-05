@@ -1,5 +1,5 @@
 import React from 'react';
-import {Editor, Text} from '../../../components/richText';
+import {Editor, Text} from '@/../components/RichText';
 // import {makeStyles} from "@material-ui/core/styles";
 
 // const useStyles = makeStyles(() => ({
