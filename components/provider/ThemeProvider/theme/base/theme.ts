@@ -1,5 +1,5 @@
 
-import {Theme as MuiTheme} from "@material-ui/core/styles";
+import {useTheme as useMuiTheme, Theme as MuiTheme} from "@material-ui/core/styles";
 
 interface MyTheme extends MuiTheme{
   
@@ -9,7 +9,9 @@ interface MyTheme extends ThemeType{
   
 }
 
-// type useMyTheme = <T = MyTheme>() => T;
+type useMyTheme = <T = Theme>() => T;
+
+export const useTheme: useMyTheme = useMuiTheme;
 
 export type Theme = MyTheme;
 

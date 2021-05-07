@@ -1,6 +1,5 @@
-import {useTheme as useMuiTheme, Theme as MuiTheme, createMuiTheme} from "@material-ui/core/styles";
+import {Theme as MuiTheme, createMuiTheme} from "@material-ui/core/styles";
 import {LabComponentNameToClassKey} from "@material-ui/lab/themeAugmentation";
-import {Theme} from '../base/theme';
 import {green, red} from '../../../../colors';
 import shadows from '../base/shadow';
 import paper from '../base/paper';
@@ -17,10 +16,6 @@ import {getTableTheme} from '../base/table';
 declare module '@material-ui/core/styles/overrides' {
   interface ComponentNameToClassKey extends LabComponentNameToClassKey {}
 }
-
-type useMyTheme = <T = Theme>() => T;
-
-const useTheme: useMyTheme = useMuiTheme;
 
 const baseTheme: MuiTheme = createMuiTheme({
   palette: {
@@ -57,7 +52,6 @@ const muiTheme = createMuiTheme({
 });
 
 export {
-  useTheme,
   baseTheme,
   muiTheme
 }
