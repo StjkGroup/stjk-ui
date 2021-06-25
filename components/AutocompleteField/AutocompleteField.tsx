@@ -1,6 +1,6 @@
 import React from 'react';
 import TextField from '../TextField';
-import Autocomplete, {AutocompleteRenderInputParams, AutocompleteClassKey} from '../Autocomplete';
+import Autocomplete, {AutocompleteRenderInputParams, AutocompleteClassKey} from '@material-ui/core/Autocomplete';
 import KeyboardArrowDownIcon from '../icons/KeyboardArrowDown';
 import { StandardProps } from '@material-ui/core';
 // import clsx from 'clsx';

@@ -4,10 +4,10 @@ import {blue, red} from '../../../../colors';
 import shadows from '../base/shadow';
 import paper from '../base/paper';
 import snackbar from '../base/snackbar';
-// import button from '../base/button';
+import {getButtonTheme} from '../base/button';
 import typography from '../base/typography';
 import {getFormTheme} from '../base/form';
-// import {getTextFieldTheme} from '../base/text-field';
+import {getTextFieldTheme} from '../base/text-field';
 import menu from '../base/menu';
 import select from '../base/select';
 import autocomplete from '../base/autocomplete';
@@ -40,10 +40,10 @@ const muiTheme = createMuiTheme({
   components: {
     ...paper,
     ...snackbar,
-    // ...button,
+    ...getButtonTheme(baseTheme),
     ...typography,
     ...getFormTheme(baseTheme),
-    // ...getTextFieldTheme(baseTheme),
+    ...getTextFieldTheme(baseTheme),
     ...menu,
     ...select,
     ...autocomplete,

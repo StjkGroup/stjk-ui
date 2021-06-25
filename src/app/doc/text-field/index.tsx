@@ -24,19 +24,46 @@ const TextFieldDoc = () => {
         <code>import TextField from '@keystore/ui/TextField'</code>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'}>
-        <TextField/>
+        <Box>
+          <Box m={2}>
+            small
+          </Box>
+          <TextField size={'small'}/>
+          <Box m={2}>
+            medium
+          </Box>
+          <TextField size={'medium'}/>
+        </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
         <code>import NumberField from '@keystore/ui/NumberField'</code>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'}>
-        <NumberField/>
+        <Box>
+          <Box m={2}>
+            small
+          </Box>
+          <NumberField size={'small'}/>
+          <Box m={2}>
+            medium
+          </Box>
+          <NumberField size={'medium'}/>
+        </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
         <code>import SearchField from '@keystore/ui/SearchField'</code>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'}>
-        <SearchField/>
+        <Box>
+            <Box m={2}>
+              small
+            </Box>
+            <SearchField size={'small'}/>
+            <Box m={2}>
+              medium
+            </Box>
+            <SearchField size={'medium'}/>
+        </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
         <code>import AutocompleteField from '@keystore/ui/AutocompleteField'</code>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from '@/../components/Box';
+import Box from '@material-ui/core/Box';
 import AddMemberIcon from '@/../components/icons/doubleColor/AddMember';
 import AddWalletIcon from '@/../components/icons/doubleColor/AddWallet';
 import BackupsIcon from '@/../components/icons/doubleColor/Backups';

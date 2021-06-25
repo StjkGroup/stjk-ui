@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from '@/../components/Box';
+import Box from '@material-ui/core/Box';
 import AuditingEnUsIcon from '@/../components/icons/audit/AuditingEnUs';
 import AuditingZhCnIcon from '@/../components/icons/audit/AuditingZhCn';
 import CancelEnUsIcon from '@/../components/icons/audit/CancelEnUs';

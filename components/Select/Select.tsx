@@ -1,13 +1,13 @@
 import React from 'react';
 import Select from '@material-ui/core/Select';
-import MenuItem from '../MenuItem';
-import InputLabel from '../InputLabel';
-import FormHelperText from '../FormHelperText';
-import FormControl from '../FormControl';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
 import {makeStyles} from "@material-ui/core/styles";
 import clsx from 'clsx';
-import Box from '../Box';
-import Typography from '../Typography';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 const useStyles = makeStyles((theme) => ({

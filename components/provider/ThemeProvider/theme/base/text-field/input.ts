@@ -7,8 +7,8 @@ export const getInputTheme: ThemeFunction = () => ({
       
       },
       input: {
-        fontSize: '0.875rem',
-        height: '1.7143em',
+        // fontSize: '0.875rem',
+        // height: '1.7143em',
       }
     }
   },

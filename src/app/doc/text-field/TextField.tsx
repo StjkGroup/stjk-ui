@@ -1,8 +1,8 @@
 import React from 'react';
-import Box from "@/../components/Box";
+import Box from "@material-ui/core/Box";
 import TextField from "@/../components/TextField";
 
-const TextField1 = () => {
+const TextField1 = ({size}: any) => {
   
   const [value, setValue] = React.useState('123');
 
@@ -15,17 +15,33 @@ const TextField1 = () => {
       <Box mt={2} display={'flex'} justifyContent={'center'}>
         <Box>
           <TextField label="Outlined"
-            value={value} onChange={(e: any) => {setValue(e.target.value)}}
+            value={value} onChange={handleChange}
+            size={size}
           />
         </Box>
         <Box ml={2}>
-          <TextField label="Filled" variant="filled" />
+          <TextField label="输入"
+            value={value} onChange={handleChange}
+            size={size}
+          />
         </Box>
         <Box ml={2}>
-          <TextField label="Standard" variant="standard" />
+          <TextField
+            value={value} onChange={handleChange}
+            size={size}
+          />
+        </Box>
+        <Box ml={2}>
+          <TextField label="Filled" variant="filled" size={size}/>
+        </Box>
+        <Box ml={2}>
+          <TextField variant="filled" size={size}/>
+        </Box>
+        <Box ml={2}>
+          <TextField label="Standard" variant="standard" size={size} />
         </Box>
       </Box>
-      <Box mt={2} display={'flex'} justifyContent={'center'}>
+      {/* <Box mt={2} display={'flex'} justifyContent={'center'}>
         <Box>
           <TextField error />
         </Box>
@@ -35,7 +51,7 @@ const TextField1 = () => {
         <Box ml={2}>
           <TextField label="standard" variant="standard" disabled value={value} onChange={handleChange}/>
         </Box>
-      </Box>
+      </Box> */}
     </Box>
   )
 }

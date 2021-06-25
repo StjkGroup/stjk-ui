@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from '@/../components/Box';
+import Box from '@material-ui/core/Box';
 import BitcoinIcon from '@/../components/icons/tokens/Bitcoin';
 import BitcoinCashIcon from '@/../components/icons/tokens/BitcoinCash';
 import EthereumIcon from '@/../components/icons/tokens/Ethereum';

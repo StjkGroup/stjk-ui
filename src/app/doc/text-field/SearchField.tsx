@@ -1,8 +1,8 @@
 import React from 'react';
-import Box from "@/../components/Box";
+import Box from "@material-ui/core/Box";
 import SearchField from "@/../components/SearchField";
 
-const SearchFieldDoc = () => {
+const SearchFieldDoc = ({size}: any) => {
   
   const [value, setValue] = React.useState('123');
 
@@ -14,39 +14,78 @@ const SearchFieldDoc = () => {
     <Box>
       <Box mt={2} display={'flex'} justifyContent={'center'}>
         <Box>
-          <SearchField label="Default"
-            value={value} onChange={e => {setValue(e.target.value)}}
+          <SearchField
+            label="Default"
+            value={value}
+            onChange={handleChange}
+            size={size}
           />
         </Box>
         <Box ml={2}>
-          <SearchField label="Filled" variant="filled" />
+          <SearchField
+            label="Filled"
+            variant="filled"
+            size={size}
+          />
         </Box>
         <Box ml={2}>
-          <SearchField label="Outlined" variant="outlined"/>
+          <SearchField
+            label="Outlined"
+            variant="outlined"
+            size={size}
+          />
         </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'}>
         <Box>
-          <SearchField label="Outlined" error />
+          <SearchField
+            label="Outlined"
+            error
+            size={size}
+          />
         </Box>
         <Box ml={2}>
-          <SearchField label="Filled" variant="filled" error helperText={'error'}/>
+          <SearchField
+            label="Filled"
+            variant="filled"
+            error
+            helperText={'error'}
+            size={size}
+          />
         </Box>
         <Box ml={2}>
-          <SearchField label="outlined" disabled value={value} onChange={handleChange}/>
+          <SearchField
+            label="outlined"
+            disabled
+            value={value}
+            onChange={handleChange}
+            size={size}
+          />
         </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'}>
         <Box>
-          <SearchField value={value} onChange={e => {setValue(e.target.value)}}
+          <SearchField
+            value={value}
+            onChange={handleChange}
+            size={size}
           />
         </Box>
         <Box ml={2}>
-          <SearchField error helperText={'error'} value={value} onChange={e => {setValue(e.target.value)}}
+          <SearchField
+            error
+            helperText={'error'}
+            value={value}
+            onChange={handleChange}
+            size={size}
           />
         </Box>
         <Box ml={2}>
-          <SearchField disabled value={value} onChange={e => {setValue(e.target.value)}}
+          <SearchField
+            disabled
+            value={value}
+            onChange={handleChange}
+            size={size}
           />
         </Box>
       </Box>

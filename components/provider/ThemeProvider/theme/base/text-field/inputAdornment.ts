@@ -5,11 +5,11 @@ export const getInputAdornmentTheme: ThemeFunction = () => ({
     styleOverrides: {
       filled: {
         '&.MuiInputAdornment-positionStart:not(.MuiInputAdornment-hiddenLabel)':{
-          marginTop: 0
+          // marginTop: 0
         }
       },
       positionStart: {
-        marginRight: 0
+        // marginRight: 0
       }
     }
   }

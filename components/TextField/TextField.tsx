@@ -2,10 +2,10 @@ import React from 'react';
 import TextField, {BaseTextFieldProps as MuiBaseTextFieldProps} from '@material-ui/core/TextField';
 import { FilledInputProps } from '@material-ui/core/FilledInput';
 import { OutlinedInputProps } from '@material-ui/core/OutlinedInput';
-import { InputProps as StandardInputProps } from '../Input';
+import { InputProps as StandardInputProps } from '@material-ui/core/Input';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import CancelIcon from '@material-ui/icons/Cancel';
-import IconButton from '../IconButton';
+import IconButton from '@material-ui/core/IconButton';
 import clsx from 'clsx';
 import {
   createStyles,
@@ -16,9 +16,18 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     startAdornmentLabel: {
       transform: 'translate(46px, 16px) scale(1)',
+      '&.MuiInputLabel-outlined.MuiInputLabel-shrink': {
+        transform: 'translate(16px, -6px) scale(0.75)',
+      },
       '&.MuiInputLabel-filled.MuiInputLabel-shrink': {
-        transform: 'translate(46px, 6px) scale(1)',
+        transform: 'translate(49px, 6px) scale(0.75)',
       }
+    },
+    startAdornmentLabelOutlinedSmall: {
+      transform: 'translate(46px, 10px) scale(1)',
+    },
+    startAdornmentLabelFilledSmall: {
+      transform: 'translate(46px, 14px) scale(1)',
     },
     cancelIconButton: {
       borderRadius: '50%',
@@ -30,6 +39,14 @@ const useStyles = makeStyles((theme) =>
     cancelIcon: {
       width: '0.65em',
       height: '0.65em',
+    },
+    filledinputNoLabel: {
+      paddingTop: 15,
+      paddingBottom: 14,
+    },
+    filledinputNoLabelSmall: {
+      paddingTop: 13,
+      paddingBottom: 12,
     }
   }),
 );
@@ -41,7 +58,7 @@ export interface FilledTextFieldProps extends MuiBaseTextFieldProps {
   variant: 'filled';
   InputProps?: Partial<FilledInputProps>;
   inputProps?: FilledInputProps['inputProps'];
-  onSearch?: (value: unknown) => void
+  onEnter?: (value: unknown) => void
 }
 
 export interface OutlinedTextFieldProps extends MuiBaseTextFieldProps {
@@ -51,7 +68,7 @@ export interface OutlinedTextFieldProps extends MuiBaseTextFieldProps {
   variant?: 'outlined';
   InputProps?: Partial<OutlinedInputProps>;
   inputProps?: OutlinedInputProps['inputProps'];
-  onSearch?: (value: unknown) => void
+  onEnter?: (value: unknown) => void
 }
 
 export interface StandardTextFieldProps extends MuiBaseTextFieldProps {
@@ -61,13 +78,13 @@ export interface StandardTextFieldProps extends MuiBaseTextFieldProps {
   variant?: 'standard';
   InputProps?: Partial<StandardInputProps>;
   inputProps?: StandardInputProps['inputProps'];
-  onSearch?: (value: unknown) => void
+  onEnter?: (value: unknown) => void
 }
 
 export type KuiTextFieldProps = OutlinedTextFieldProps | FilledTextFieldProps | StandardTextFieldProps;
 
 const KuiTextField = React.forwardRef(({
-  variant,
+  variant='outlined',
   color='primary',
   InputProps={},
   defaultValue,
@@ -75,23 +92,27 @@ const KuiTextField = React.forwardRef(({
   onChange,
   disabled,
   InputLabelProps,
-  onSearch,
+  onEnter,
+  label,
+  size,
   ...props
 }: KuiTextFieldProps, ref: any) => {
   const classes = useStyles();
 
-  const [state, setState] = React.useState<any>({value: value || defaultValue});
+  const [state, setState] = React.useState<any>({value: defaultValue || value || ''});
   const [focus, setFocus] = React.useState(false);
   const [hover, setHover] = React.useState(false);
 
   React.useEffect(() => {
-    setState({value});
+    if(value){
+      setState({value});
+    }
   }, [value]);
 
   const handleClickClear = () => {
-    if(value || onChange){
-      const event: any = {target: {value: ''}};
-      onChange && onChange(event);
+    if(value && onChange){
+      const event = {target: {value: ''}} as React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
+      onChange(event);
     }else{
       setState({value: ''});
     }
@@ -99,7 +120,7 @@ const KuiTextField = React.forwardRef(({
 
   const handleKeypress = (e: any) => {
     if(e.keyCode === 13){
-      onSearch && onSearch(state.value);
+      onEnter && onEnter(state.value);
     }
   }
 
@@ -112,8 +133,8 @@ const KuiTextField = React.forwardRef(({
   }
 
   const handleChange = (event: any) => {
-    if(value || onChange){
-      onChange && onChange(event);
+    if(value && onChange){
+      onChange(event);
     }else{
       setState({value: event.target.value});
     }
@@ -143,11 +164,19 @@ const KuiTextField = React.forwardRef(({
   
   const textFieldProps = {
     variant, color,
-    defaultValue: state.value,
     value: state.value,
     onChange: handleChange,
     disabled,
-    InputLabelProps: {shrink, className: clsx({[classes.startAdornmentLabel]: Boolean(InputProps && InputProps.startAdornment)}), ...InputLabelProps},
+    size,
+    InputLabelProps: {
+      shrink,
+      className: clsx(
+        {[classes.startAdornmentLabel]: Boolean(InputProps && InputProps.startAdornment)},
+        {[classes.startAdornmentLabelOutlinedSmall]: Boolean(InputProps && InputProps.startAdornment) && size==='small' && variant==='outlined'},
+        {[classes.startAdornmentLabelFilledSmall]: Boolean(InputProps && InputProps.startAdornment) && size==='small' && variant==='filled'},
+      ),
+      ...InputLabelProps
+    },
     onBlur: handleBlur,
     onFocus: handleFocus,
     onMouseEnter: handleMouseEnter,
@@ -158,13 +187,24 @@ const KuiTextField = React.forwardRef(({
 
 
   if(variant === 'filled'){
+    const {inputProps={}, ...otherInputProps} = InputProps;
+    const {className, ...otherinputProps} = inputProps;
     return (
       <TextField
         InputProps={{
           disableUnderline: true,
           endAdornment,
-          ...InputProps,
+          inputProps: {
+            className: clsx(
+              {[classes.filledinputNoLabel]: !Boolean(label)},
+              {[classes.filledinputNoLabelSmall]: !Boolean(label) && textFieldProps.size==='small'},
+              className
+            ),
+            ...otherinputProps
+          },
+          ...otherInputProps,
         } as Partial<OutlinedInputProps>}
+        label={label}
         {...textFieldProps}
         ref={ref}
       />
@@ -176,6 +216,7 @@ const KuiTextField = React.forwardRef(({
         endAdornment,
         ...InputProps
       }}
+      label={label}
       {...textFieldProps}
       ref={ref}
     />

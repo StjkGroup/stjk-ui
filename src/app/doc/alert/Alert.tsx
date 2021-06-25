@@ -1,6 +1,6 @@
 import React from 'react';
-import Box from "@/../components/Box";
-import Alert from "@/../components/Alert";
+import Box from "@material-ui/core/Box";
+import Alert from "@material-ui/core/Alert";
 
 const AlertDoc = () => {
   

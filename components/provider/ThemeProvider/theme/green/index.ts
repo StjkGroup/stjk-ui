@@ -4,7 +4,7 @@ import {green, red} from '../../../../colors';
 import shadows from '../base/shadow';
 import paper from '../base/paper';
 import snackbar from '../base/snackbar';
-// import button from '../base/button';
+import {getButtonTheme} from '../base/button';
 import typography from '../base/typography';
 import {getFormTheme} from '../base/form';
 // import {getTextFieldTheme} from '../base/text-field';
@@ -40,7 +40,7 @@ const muiTheme = createMuiTheme({
   components: {
     ...paper,
     ...snackbar,
-    // ...button,
+    ...getButtonTheme(baseTheme),
     ...typography,
     ...getFormTheme(baseTheme),
     // ...getTextFieldTheme(baseTheme),

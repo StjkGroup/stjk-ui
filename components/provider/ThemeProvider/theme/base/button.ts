@@ -1,28 +1,60 @@
-import {Theme} from './theme';
+import {ThemeFunction} from './theme';
 
-const button: Theme['components'] = {
+export const getButtonTheme: ThemeFunction = (baseTheme) => ({
   MuiButton: {
+    variants: [{
+      props: {variant: 'contained', disabled: true, color: 'primary'},
+      style: {
+        '&.Mui-disabled': {
+          backgroundColor: baseTheme.palette.primary.light,
+        },
+      },
+    },{
+      props: {variant: 'outlined', disabled: true, color: 'primary'},
+      style: {
+        '&.Mui-disabled': {
+          color: baseTheme.palette.primary.light,
+          borderColor: baseTheme.palette.primary.light,
+        },
+      },
+    },{
+      props: {variant: 'text', disabled: true, color: 'primary'},
+      style: {
+        '&.Mui-disabled': {
+          color: baseTheme.palette.primary.light,
+        },
+      },
+    },{
+      props: {variant: 'contained', disabled: true, color: 'secondary'},
+      style: {
+        '&.Mui-disabled': {
+          backgroundColor: baseTheme.palette.secondary.light,
+        },
+      },
+    },{
+      props: {variant: 'outlined', disabled: true, color: 'secondary'},
+      style: {
+        '&.Mui-disabled': {
+          color: baseTheme.palette.secondary.light,
+          borderColor: baseTheme.palette.secondary.light,
+        },
+      },
+    },{
+      props: {variant: 'text', disabled: true, color: 'secondary'},
+      style: {
+        '&.Mui-disabled': {
+          color: baseTheme.palette.secondary.light,
+        },
+      },
+    }],
     styleOverrides: {
-      root: {
-        textTransform: "inherit",
-        padding: '8px 24px'
-      },
-      outlined: {
-        padding: '8px 24px',
-      },
-      text: {
-        padding: '8px 24px'
-      },
-    }
+      
+    },
   },
   MuiIconButton: {
     styleOverrides: {
       root: {
-        borderRadius: '4px',
-        padding: '4px'
       }
     }
   },
-}
-
-export default button;
+})

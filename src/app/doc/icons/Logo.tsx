@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from '@/../components/Box';
+import Box from '@material-ui/core/Box';
 import KeyPayIcon from '@/../components/icons/logo/KeyPay';
 import KeypoolIcon from '@/../components/icons/logo/KeyPool';
 import KeystoreIcon from '@/../components/icons/logo/Keystore';

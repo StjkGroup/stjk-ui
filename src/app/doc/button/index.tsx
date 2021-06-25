@@ -1,8 +1,8 @@
 import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
-import Box from '@/../components/Box';
-import Button from '@/../components/Button';
-import IconButton from '@/../components/IconButton';
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import DelelteIcon from '@/../components/icons/Delelte';
 import FavoriteIcon from '@/../components/icons/Favorite';
 
@@ -25,22 +25,22 @@ const ButtonApp = () => {
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
         <Box>
-          <Button color={'primary'}>Primary</Button>
+          <Button variant={'contained'} color={'primary'}>Primary</Button>
         </Box>
         <Box ml={2}>
-          <Button color={'secondary'}>Secondary</Button>
+          <Button variant={'contained'} color={'secondary'}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button color={'inherit'}>Default</Button>
+          <Button variant={'contained'} color={'inherit'}>Default</Button>
         </Box>
         <Box ml={2}>
-          <Button disabled color={'primary'}>Primary</Button>
+          <Button variant={'contained'} disabled color={'primary'}>Primary</Button>
         </Box>
         <Box ml={2}>
-          <Button disabled color={'secondary'}>Secondary</Button>
+          <Button variant={'contained'} disabled color={'secondary'}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button disabled color={'inherit'}>Default</Button>
+          <Button variant={'contained'} disabled color={'inherit'}>Default</Button>
         </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
@@ -85,22 +85,22 @@ const ButtonApp = () => {
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
         <Box>
-          <Button color={'primary'} startIcon={<FavoriteIcon/>}>Primary</Button>
+          <Button variant={'contained'} color={'primary'} startIcon={<FavoriteIcon/>}>Primary</Button>
         </Box>
         <Box ml={2}>
-          <Button color={'secondary'} startIcon={<FavoriteIcon/>}>Secondary</Button>
+          <Button variant={'contained'} color={'secondary'} startIcon={<FavoriteIcon/>}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button color={'inherit'} startIcon={<FavoriteIcon/>}>Default</Button>
+          <Button variant={'contained'} color={'inherit'} startIcon={<FavoriteIcon/>}>Default</Button>
         </Box>
         <Box ml={2}>
-          <Button disabled color={'primary'} startIcon={<FavoriteIcon/>}>Primary</Button>
+          <Button variant={'contained'} disabled color={'primary'} startIcon={<FavoriteIcon/>}>Primary</Button>
         </Box>
         <Box ml={2}>
-          <Button disabled color={'secondary'} startIcon={<FavoriteIcon/>}>Secondary</Button>
+          <Button variant={'contained'} disabled color={'secondary'} startIcon={<FavoriteIcon/>}>Secondary</Button>
         </Box>
         <Box ml={2}>
-          <Button disabled color={'inherit'} startIcon={<FavoriteIcon/>}>Default</Button>
+          <Button variant={'contained'} disabled color={'inherit'} startIcon={<FavoriteIcon/>}>Default</Button>
         </Box>
       </Box>
       <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
@@ -175,7 +175,7 @@ const ButtonApp = () => {
           </IconButton>
         </Box>
         <Box ml={2}>
-          <IconButton color={'default'}>
+          <IconButton>
             <DelelteIcon/>
           </IconButton>
         </Box>

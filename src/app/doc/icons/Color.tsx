@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from '@/../components/Box';
+import Box from '@material-ui/core/Box';
 import TrialEnUsIcon from '@/../components/icons/color/TrialEnUs';
 import TrialZhCnIcon from '@/../components/icons/color/TrialZhCn';
 import {makeStyles} from "@material-ui/core/styles";

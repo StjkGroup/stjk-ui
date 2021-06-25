@@ -7,7 +7,7 @@ import
   }
 from '../TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import IconButton from '../IconButton';
+import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import clsx from 'clsx';
 import {
@@ -18,9 +18,17 @@ import {
 const useStyles = makeStyles(() =>
   createStyles({
     root: {
+
+    },
+    Input: {
+      paddingLeft: 0
+    },
+    input: {
+      paddingLeft: 0,
     },
     inputAdornment: {
-      marginTop: 0,
+      marginTop: '0 !important',
+      marginRight: 0,
     },
   }),
 );
@@ -50,11 +58,14 @@ const KuiSearchField = ({
   }
 
   const handleInputSearch = () => {
-      handleSearch();
+    handleSearch();
   }
 
   const startAdornment = (
-    <InputAdornment position="start" className={classes.inputAdornment}>
+    <InputAdornment
+      position="start"
+      className={classes.inputAdornment}
+    >
       <IconButton
         onClick={handleSearch}
         disabled={disabled}
@@ -63,15 +74,25 @@ const KuiSearchField = ({
       </IconButton>
     </InputAdornment>
   );
+
+  const {className: InputClassName, inputProps={}, ...otherInputProps} = InputProps;
+
+  const {className: inputClassName, ...otherinputProps} = inputProps;
+
   return (
     <TextField
       InputProps={{
         startAdornment,
-        ...InputProps,
+        className: clsx(classes.Input, InputClassName),
+        inputProps: {
+          className: clsx(classes.input, inputClassName),
+          ...otherinputProps
+        },
+        ...otherInputProps,
       }}
       disabled={disabled}
       className={clsx(classes.root, className)}
-      onSearch={handleInputSearch}
+      onEnter={handleInputSearch}
       {...props}
     />
   );

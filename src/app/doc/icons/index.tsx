@@ -1,6 +1,6 @@
 import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
-import Box from '@/../components/Box';
+import Box from '@material-ui/core/Box';
 import FavoriteIcon from '@/../components/icons/Favorite';
 import DelelteIcon from '@/../components/icons/Delelte';
 import Tokens from './Tokens';

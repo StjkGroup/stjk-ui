@@ -1,8 +1,8 @@
 import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import * as colors from '@/../components/colors';
-import Box from '@/../components/Box';
-import Typography from '@/../components/Typography';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
 import {NAME} from '@/env';
 
