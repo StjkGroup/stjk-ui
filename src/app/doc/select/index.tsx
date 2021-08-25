@@ -1,5 +1,5 @@
 import React from 'react';
-import {makeStyles} from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/styles";
 import Box from '@material-ui/core/Box';
 import Select1 from './select1';
 import Select2 from './select2';

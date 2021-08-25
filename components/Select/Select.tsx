@@ -1,16 +1,17 @@
 import React from 'react';
-import Select from '@material-ui/core/Select';
+import Select, { SelectChangeEvent } from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/styles";
+import { Theme, useTheme } from "@material-ui/core/styles";
 import clsx from 'clsx';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = (theme: Theme) => makeStyles(() => ({
   formControl: {
     // margin: theme.spacing(1),
     minWidth: 120,
@@ -40,7 +41,7 @@ interface KuiSelectProps<T = unknown>{
   label?: React.ReactNode;
   defaultValue?: any;
   multiple?: boolean;
-  onChange?: (event: React.ChangeEvent<{ value: unknown }>) => void;
+  onChange?: (event: SelectChangeEvent<any>) => void;
   value?: any;
   children?: React.ReactNode;
   color?: 'primary' | 'secondary';
@@ -60,7 +61,8 @@ interface KuiSelectProps<T = unknown>{
 }
 
 const LabelComponent = ({children, startIcon, endIcon}: any) => {
-  const classes = useStyles();
+  const theme = useTheme();
+  const classes = useStyles(theme)();
   return (
     <Box display={'flex'} alignItems={'center'}>
       {startIcon}
@@ -83,14 +85,15 @@ const KuiSelect = ({
   value=defaultValue, onChange, helperText, multiple, renderValue,
   ...props
 }: KuiSelectProps) => {
-  const classes = useStyles();
+  const theme = useTheme();
+  const classes = useStyles(theme)();
   const [state, setState] = React.useState({value: value});
 
   React.useEffect(() => {
     setState({value});
   }, [value]);
 
-  const handleChange = (e: React.ChangeEvent<{ value: unknown }>) => {
+  const handleChange = (e: SelectChangeEvent<any>) => {
     if(onChange){
       onChange(e);
     }else{

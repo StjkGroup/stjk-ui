@@ -7,12 +7,10 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import CancelIcon from '@material-ui/icons/Cancel';
 import IconButton from '@material-ui/core/IconButton';
 import clsx from 'clsx';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { makeStyles, createStyles } from "@material-ui/styles";
+import { Theme, useTheme } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) =>
+const useStyles = (theme: Theme) => makeStyles(() =>
   createStyles({
     startAdornmentLabel: {
       transform: 'translate(46px, 16px) scale(1)',
@@ -97,7 +95,8 @@ const KuiTextField = React.forwardRef(({
   size,
   ...props
 }: KuiTextFieldProps, ref: any) => {
-  const classes = useStyles();
+  const theme = useTheme();
+  const classes = useStyles(theme)();
 
   const [state, setState] = React.useState<any>({value: defaultValue || value || ''});
   const [focus, setFocus] = React.useState(false);

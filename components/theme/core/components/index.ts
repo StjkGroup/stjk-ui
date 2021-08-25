@@ -1,4 +1,4 @@
-import {Theme as MuiTheme, createMuiTheme} from "@material-ui/core/styles";
+import {Theme as MuiTheme, createTheme as createMuiTheme} from "@material-ui/core/styles";
 import paper from './paper';
 import snackbar from './snackbar';
 import {getButtonTheme} from './button';
@@ -7,7 +7,7 @@ import {getFormTheme} from './form';
 // import {getTextFieldTheme} from './text-field';
 import menu from './menu';
 import select from './select';
-import autocomplete from './autocomplete';
+// import autocomplete from './autocomplete';
 import {getTableTheme} from './table';
 
 const createComponentsTheme = (theme: MuiTheme) => {
@@ -22,7 +22,7 @@ const createComponentsTheme = (theme: MuiTheme) => {
       // ...getTextFieldTheme(baseTheme),
       ...menu,
       ...select,
-      ...autocomplete,
+      // ...autocomplete,
       ...getTableTheme(theme),
     },
   });

@@ -1,7 +1,7 @@
 /**
  * Create by fay on 4/22/20 10:27 下午
  */
-import { ThemeProvider as MuiThemeProvider, createMuiTheme, ThemeOptions } from '@material-ui/core/styles';
+import { ThemeProvider as MuiThemeProvider, createTheme as createMuiTheme, ThemeOptions } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import React from 'react';
 import greenTheme from '../../theme/green';

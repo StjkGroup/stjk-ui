@@ -1,12 +1,13 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/styles';
+import { useTheme, Theme } from '@material-ui/core/styles';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import {useRouter} from 'next/router';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = (theme: Theme) => makeStyles(() =>
   createStyles({
     root: {
       width: '100%',
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
       height: '100%',
       padding: 0
     },
-  }),
+  })
 );
 
 const docBasePath = '/doc';
@@ -44,10 +45,17 @@ const nav = [{
 },{
   path: docBasePath+'/alert',
   name: 'Alert 警告提示'
+},{
+  path: docBasePath+'/theme',
+  name: 'Theme 主题'
+},{
+  path: docBasePath+'/pagination',
+  name: 'Pagination 分页组件'
 }]
 
 export default function NestedList() {
-  const classes = useStyles();
+  const theme = useTheme();
+  const classes = useStyles(theme)();
   const router = useRouter();
 
   const handleClick = (path: string) => () => {

@@ -4,7 +4,7 @@ import KeyPayIcon from '@/../components/icons/logo/KeyPay';
 import KeypoolIcon from '@/../components/icons/logo/KeyPool';
 import KeystoreIcon from '@/../components/icons/logo/Keystore';
 import KeystoreClientIcon from '@/../components/icons/logo/KeystoreClient';
-import {makeStyles} from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/styles";
 
 const useStyles = makeStyles(() => ({
   icon: {

@@ -12,7 +12,8 @@ import PowerIcon from '@/../components/icons/doubleColor/Power';
 import TransferorIcon from '@/../components/icons/doubleColor/Transferor';
 import ArchivedIcon from '@/../components/icons/doubleColor/Archived';
 import EnableWalletIcon from '@/../components/icons/doubleColor/EnableWallet';
-import {makeStyles} from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/styles";
+
 
 const useStyles = makeStyles(() => ({
   icon: {

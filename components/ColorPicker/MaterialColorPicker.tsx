@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import * as colors from "@material-ui/core/colors";
 import Tooltip from "@material-ui/core/Tooltip";
 import Collapse from "@material-ui/core/Collapse";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles } from "@material-ui/styles";
+import { Theme, useTheme } from "@material-ui/core/styles";
 // import { decomposeColor, recomposeColor, rgbToHex, hslToRgb } from "@material-ui/core/styles/colorManipulator";
 // import { decomposeColor} from "@material-ui/core/styles/colorManipulator";
 
@@ -59,7 +60,7 @@ const paletteWidth = 400
 const colorTypeWidth = paletteWidth / muiHues.length
 const colorStrengthWidth = paletteWidth / muiShades.length
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = (theme: Theme) => makeStyles(() =>
   createStyles({
     paletteContainer: {
       display: "flex",
@@ -79,7 +80,8 @@ const useStyles = makeStyles((theme: Theme) =>
 const MaterialColorPicker = ({ color, onChangeComplete }: any) => {
   const [hue, setHue] = React.useState("red")
   const [shade, setShade] = React.useState<string | null>(null)
-  const classes = useStyles()
+  const theme = useTheme();
+  const classes = useStyles(theme)();
 
   useEffect(() => {
     // if incoming color maps to a Material UI color, change the input to match

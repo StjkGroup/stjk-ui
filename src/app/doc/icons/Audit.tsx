@@ -14,7 +14,7 @@ import RevokedEnUsIcon from '@/../components/icons/audit/RevokedEnUs';
 import RevokedZhCnIcon from '@/../components/icons/audit/RevokedZhCn';
 import FrozenEnUsIcon from '@/../components/icons/audit/FrozenEnUs';
 import FrozenZhCnIcon from '@/../components/icons/audit/FrozenZhCn';
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles(() => ({
   icon: {

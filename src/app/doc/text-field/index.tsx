@@ -1,10 +1,10 @@
 import React from 'react';
-import {makeStyles} from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/styles";
 import Box from "@material-ui/core/Box";
 import TextField from "./TextField";
 import NumberField from "./NumberField";
 import SearchField from "./SearchField";
-import AutocompleteField from "./AutocompleteField";
+import Abc from './Abc';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -17,6 +17,7 @@ const TextFieldDoc = () => {
 
   return (
     <div className={classes.root}>
+      <Abc/>
       <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
         <h1>Welcome to keystore ui TextField.</h1>
       </Box>
@@ -64,12 +65,6 @@ const TextFieldDoc = () => {
             </Box>
             <SearchField size={'medium'}/>
         </Box>
-      </Box>
-      <Box mt={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
-        <code>import AutocompleteField from '@keystore/ui/AutocompleteField'</code>
-      </Box>
-      <Box mt={2} display={'flex'} justifyContent={'center'}>
-        <AutocompleteField/>
       </Box>
       <Box mt={8}>
       </Box>

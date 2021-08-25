@@ -10,10 +10,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import clsx from 'clsx';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { makeStyles, createStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles(() =>
   createStyles({

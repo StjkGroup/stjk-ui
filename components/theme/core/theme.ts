@@ -1,4 +1,4 @@
-import {useTheme as useMuiTheme, Theme as MuiTheme, createMuiTheme, ThemeOptions} from "@material-ui/core/styles";
+import {useTheme as useMuiTheme, Theme as MuiTheme, createTheme as createMuiTheme, ThemeOptions} from "@material-ui/core/styles";
 import {createComponentsTheme} from './components';
 import shadows from './shadows';
 

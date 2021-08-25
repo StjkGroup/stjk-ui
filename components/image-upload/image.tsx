@@ -3,11 +3,12 @@
  */
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from "@material-ui/styles";
+import { Theme, useTheme } from '@material-ui/core/styles';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 const maxSize = 2*1024*1024;
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = (theme: Theme) => makeStyles(() =>
   createStyles({
     paper: {
       position: "absolute",
@@ -26,7 +27,8 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export default ({onChange}: any) => {
-  const classes = useStyles();
+  const theme = useTheme();
+  const classes = useStyles(theme)();
   const inputRef = React.useRef<any>();
 
   const handleChange = (e: any) => {

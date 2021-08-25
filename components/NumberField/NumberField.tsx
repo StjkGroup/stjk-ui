@@ -16,10 +16,7 @@ import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import {grey} from '../colors';
 import clsx from 'clsx';
 import BigNumber from 'bignumber.js';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { makeStyles, createStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles(() =>
   createStyles({

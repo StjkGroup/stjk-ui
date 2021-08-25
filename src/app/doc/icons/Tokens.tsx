@@ -11,7 +11,7 @@ import TetherOMNIIcon from '@/../components/icons/tokens/TetherOMNI';
 import LitecoinIcon from '@/../components/icons/tokens/Litecoin';
 import FilecoinIcon from '@/../components/icons/tokens/Filecoin';
 import USDIcon from '@/../components/icons/tokens/USD';
-import {makeStyles} from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/styles";
 
 const useStyles = makeStyles(() => ({
   icon: {
